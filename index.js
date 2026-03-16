@@ -23,7 +23,8 @@ containerNode.addEventListener("mouseover", changeColor);
 function changeColor(e) {
   const childTarget = e.target;
   if (childTarget.className === "item")
-    childTarget.style.backgroundColor = "black";
+    // childTarget.style.backgroundColor = "black";
+    childTarget.style.backgroundColor = `rgba(${random(0, 256)} ${random(0, 256)} ${random(0, 256)} / ${1})`;
 }
 
 // форма
@@ -38,6 +39,10 @@ function changeColor(e) {
 //   width.value = ''
 //   height.value = ''
 // });
+
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
 // изменение поля
 buttonField.addEventListener('click', function() {
