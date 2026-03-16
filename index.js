@@ -1,5 +1,6 @@
 const containerNode = document.querySelector(".container");
-const form = document.querySelector("form");
+// const form = document.querySelector("form");
+const buttonField = document.querySelector(".field")
 
 // генерация тайлов
 generateTiles();
@@ -26,17 +27,25 @@ function changeColor(e) {
 }
 
 // форма
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
 
-  const width = form.querySelector("#width");
-  const height = form.querySelector("#height");
+//   const width = form.querySelector("#width");
+//   const height = form.querySelector("#height");
 
-  generateMap(width.value, height.value);
+//   generateMap(width.value, height.value);
 
-  width.value = ''
-  height.value = ''
-});
+//   width.value = ''
+//   height.value = ''
+// });
+
+// изменение поля
+buttonField.addEventListener('click', function() {
+  const width = +prompt(`Type grid's width`, 64)
+  const height = +prompt(`Type grid's height`, 64)
+  
+  generateMap(width, height)
+})
 
 // Генерация карты
 function generateMap(width, height) {
